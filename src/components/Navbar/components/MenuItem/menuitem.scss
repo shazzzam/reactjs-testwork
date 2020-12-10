@@ -1,0 +1,18 @@
+.main-nav__item {
+  list-style: none;
+  margin-left: 36px;
+}
+
+.main-nav__item:first-child {
+  margin-left: 0;
+}
+
+.main-nav__link {
+  background-color: #ce9912;
+  font-size: 14px;
+}
+
+.main-nav__link:hover,
+.main-nav__link--active {
+  background-color: #ff4a4a;
+}

@@ -1,0 +1,20 @@
+.app {
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.main {
+  margin: auto;
+  margin-top: auto;
+  padding: 76px 80px;
+  background-color: #fff;
+  border-radius: 20px;
+  min-width: 70%;
+  min-height: 60%;
+}
