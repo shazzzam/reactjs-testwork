@@ -3,6 +3,7 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
 import './App.scss';
 import { About } from './components/About/About';
+import { Calculator } from './components/Calculator/Calculator';
 import { Navbar } from './components/Navbar/Navbar';
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
               <About />
             </Route>
             <Route path="/">
-              <h1>Калькулятор</h1>
+              <Calculator />
             </Route>
           </Switch>
         </div>

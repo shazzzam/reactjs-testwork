@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Rubik:wght@500&display=swap');
 
+:root {
+  --color-blue: #007fc7;
+  --color-red: #ff2c2c;
+  --color-gold: #ce9912;
+}
+
 html,
 body {
   margin: 0;
@@ -25,7 +31,7 @@ body {
 }
 
 .title {
-  color: #007fc7;
+  color: var(--color-blue);
   font-size: 20px;
   font-weight: 500;
   font-family: 'Rubik', sans-serif;
