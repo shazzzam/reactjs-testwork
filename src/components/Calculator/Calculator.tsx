@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Field, Form } from 'react-final-form';
+import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
+import { courseFetch } from '../../store/course/courseActions';
+
 import {
   composeValidators,
   minValue,
@@ -14,12 +17,19 @@ interface FormData {
 }
 
 export const Calculator = () => {
+  const loading = useSelector((state: RootStateOrAny) => state.loading);
+  const course = useSelector((state: RootStateOrAny) => state.course);
+  const dispatch = useDispatch();
+  const [value, setValue] = useState<number>(0);
+
   const submitHandler = (event: FormData) => {
-    console.log(parseFloat(event.sumG));
+    setValue(parseFloat(event.sumG));
+    dispatch(courseFetch());
   };
 
   return (
     <div className="calculator">
+      {loading ? <h1>Loading</h1> : null}
       <h1 className="calculator__title title">Калькулятор</h1>
       <Form
         onSubmit={submitHandler}
@@ -43,6 +53,17 @@ export const Calculator = () => {
                     />
                     {isError && (
                       <span className="calculator__error">{meta.error}</span>
+                    )}
+                    {!loading && course.buy ? (
+                      <p className="calculator__result">
+                        <span>{value} грн </span>
+                        по курсу
+                        <span> {course.buy}$ </span>
+                        это
+                        <span> {(value / course.buy).toFixed(2)}$</span>
+                      </p>
+                    ) : (
+                      ''
                     )}
                   </>
                 );
