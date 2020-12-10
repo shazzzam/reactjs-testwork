@@ -9,6 +9,7 @@ import {
   mustBeNumber,
   required,
 } from '../../utils/validators';
+import { Loader } from '../Loader/Loader';
 
 import './calculator.scss';
 
@@ -29,7 +30,7 @@ export const Calculator = () => {
 
   return (
     <div className="calculator">
-      {loading ? <h1>Loading</h1> : null}
+      {loading ? <Loader /> : ''}
       <h1 className="calculator__title title">Калькулятор</h1>
       <Form
         onSubmit={submitHandler}
